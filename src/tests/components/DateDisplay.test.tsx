@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import DateDisplay from '../../components/DateDisplay'
+import DateDisplay from '../../shared/components/DateDisplay'
 
 test('renders current date', () => {
     render(<DateDisplay />)
