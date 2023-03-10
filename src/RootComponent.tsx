@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import { ROUTES } from './resources/routes-constants'
 import './styles/main.scss'
-import SVGPage from './pages/SVGPage'
+import SVGPage from './pages/SVGPage/SVGPage'
 
 const RootComponent: React.FC = () => {
     return (
