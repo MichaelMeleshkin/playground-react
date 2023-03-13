@@ -78,29 +78,33 @@ const HomePage: React.FC = () => {
                             Show more icons
                         </button>
                     )}
-                    <p>Change example icon size:</p>
-                    <div className="d-flex">
-                        <button
-                            type="button"
-                            className="size-btn active btn btn-outline-secondary me-2 mb-2"
-                            onClick={(event) => setExampleIconSize(event, 'size-50')}
-                        >
-                            50px
-                        </button>
-                        <button
-                            type="button"
-                            className="size-btn btn btn-outline-secondary me-2 mb-2"
-                            onClick={(event) => setExampleIconSize(event, 'size-100')}
-                        >
-                            100px
-                        </button>
-                        <button
-                            type="button"
-                            className="size-btn btn btn-outline-secondary me-2 mb-2"
-                            onClick={(event) => setExampleIconSize(event, 'size-200')}
-                        >
-                            200px
-                        </button>
+                    <div className="card d-inline-block shadow position-fixed bottom-0 end-0 me-4 mb-3">
+                        <div className="card-body text-center">
+                            <p className="card-title h5">Change example icon size:</p>
+                            <div className="btn-group" role="group" aria-label="SVG icon size">
+                                <button
+                                    type="button"
+                                    className="size-btn active btn btn-outline-secondary mb-2"
+                                    onClick={(event) => setExampleIconSize(event, 'size-50')}
+                                >
+                                    50px
+                                </button>
+                                <button
+                                    type="button"
+                                    className="size-btn btn btn-outline-secondary mb-2"
+                                    onClick={(event) => setExampleIconSize(event, 'size-100')}
+                                >
+                                    100px
+                                </button>
+                                <button
+                                    type="button"
+                                    className="size-btn btn btn-outline-secondary mb-2"
+                                    onClick={(event) => setExampleIconSize(event, 'size-200')}
+                                >
+                                    200px
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     {isLoading && (
                         <div className="d-flex justify-content-center">

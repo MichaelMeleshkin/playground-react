@@ -12,7 +12,7 @@ const EFeComponentTransfer: React.FC<Props> = ({ selectedIcon }: Props) => {
                 <p>
                     <em>&lt;feFuncR&gt; &lt;feFuncB&gt; &lt;feFuncG&gt; &lt;feFuncA&gt;</em>
                 </p>
-                <svg viewBox="0 0 100 100" style={{ minHeight: '150px', minWidth: '150px' }}>
+                <svg viewBox="0 0 100 100">
                     <defs>
                         <linearGradient id="rainbow">
                             <stop offset="0" stopColor="#ff0000"></stop>

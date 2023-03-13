@@ -8,7 +8,7 @@ type Props = {
 const EFeColorMatrix: React.FC<Props> = ({ selectedIcon }: Props) => {
     return (
         <SVGTag name="feColorMatrix">
-            <svg width="100%" height="100%" viewBox="0 0 100 100" style={{ minHeight: '150px', minWidth: '150px' }}>
+            <svg width="100%" height="100%" viewBox="0 0 100 100">
                 <defs>
                     <g id="feColorMatrix-icon">
                         <use href={`#${selectedIcon}`} transform="translate(0 0)" width="10%" height="10%" />
