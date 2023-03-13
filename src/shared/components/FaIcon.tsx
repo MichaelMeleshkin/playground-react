@@ -9,13 +9,19 @@ export const FaIcons = {
 
 interface Props extends React.ComponentProps<any> {
     name: IconDefinition
+    resetFill?: boolean
 }
 
-const FaIcon: React.FC<Props> = ({ name, ...props }: Props) => {
+const FaIcon: React.FC<Props> = ({ name, resetFill, ...props }: Props) => {
     const ref = React.createRef<SVGSVGElement>()
     useEffect(() => {
-        ref.current?.querySelector('path')?.setAttribute('id', `${props.id}-path`)
-    }, [props.id, ref])
+        const path = ref.current?.querySelector('path')
+        if (path) {
+            !path.hasAttribute('id') && path.setAttribute('id', `${props.id}-path`)
+
+            resetFill && path.removeAttribute('fill')
+        }
+    }, [props.id, ref, resetFill])
 
     return <FontAwesomeIcon icon={name} {...props} ref={ref} />
 }

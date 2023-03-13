@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import PageLayout from '../../shared/components/PageLayout'
-import FaIcon from '../../shared/components/FaIcon'
+import FaIconExample from './examples/FaIconExample'
 import * as FaIcons from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition, IconPack, IconPrefix } from '@fortawesome/free-solid-svg-icons'
-
 import './SVGPage.scss'
-import { EA, EAnimate, EAnimateMotion, EAnimateTransform, EClipPath, EDefs } from './examples'
+import {
+    EA,
+    EAnimate,
+    EAnimateMotion,
+    EAnimateTransform,
+    EClipPath,
+    EDefs,
+    EFeBlend,
+    EFeColorMatrix,
+    EFeComponentTransfer
+} from './examples'
 
 const HomePage: React.FC = () => {
     const iconsLimit = 100
@@ -61,7 +70,7 @@ const HomePage: React.FC = () => {
                                 key={id}
                                 onClick={(e) => selectIcon(e, id)}
                             >
-                                <FaIcon name={val as IconDefinition} id={id}></FaIcon>
+                                <FaIconExample name={val as IconDefinition} id={id} resetFill={true}></FaIconExample>
                             </button>
                         ))}
                     {!isAllIcons && (
@@ -120,6 +129,15 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EDefs selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeBlend selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeColorMatrix selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeComponentTransfer selectedIcon={selectedIcon} />
                             </li>
                         </ul>
                     )}

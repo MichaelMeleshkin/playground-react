@@ -25,7 +25,13 @@ const ELink: React.FC<Props> = ({ selectedIcon }: Props) => {
     return (
         <SVGTag name="animateMotion">
             <svg viewBox={viewBoxPadding(getElemAttr(selectedIcon, 'viewBox') ?? '')}>
-                <use {...viewBoxToParams(getElemAttr(selectedIcon, 'viewBox') ?? '')} fill="none" href={`#${selectedIcon}`} />
+                <use
+                    {...viewBoxToParams(getElemAttr(selectedIcon, 'viewBox') ?? '')}
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="6"
+                    href={`#${selectedIcon}`}
+                />
                 <g id="animateMotion-circle-group">
                     <circle r="42" fill="red"></circle>
                     <circle r="20" fill="white"></circle>

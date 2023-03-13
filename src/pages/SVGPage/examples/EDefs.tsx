@@ -8,7 +8,7 @@ type Props = {
 const EDefs: React.FC<Props> = ({ selectedIcon }: Props) => {
     return (
         <SVGTag name="defs">
-            <svg viewBox="0 0 100 100" style={{ fill: 'none' }}>
+            <svg viewBox="0 0 100 100">
                 <defs>
                     <use id="defs-icon" href={`#${selectedIcon}`} />
 

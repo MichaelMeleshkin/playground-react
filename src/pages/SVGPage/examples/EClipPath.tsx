@@ -15,7 +15,7 @@ const EClipPath: React.FC<Props> = ({ selectedIcon }: Props) => {
                     <circle cx="40" cy="35" r="35" fill="blue" />
                 </clipPath>
 
-                <use clipPath="url(#clipPath-circle)" href={`#${selectedIcon}`} style={{ color: 'red' }} />
+                <use clipPath="url(#clipPath-circle)" href={`#${selectedIcon}`} style={{ fill: 'red' }} />
             </svg>
         </SVGTag>
     )
