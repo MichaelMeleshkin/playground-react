@@ -3,7 +3,7 @@ import PageLayout from '../../shared/components/PageLayout'
 import FaIconExample from './examples/FaIconExample'
 import * as FaIcons from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition, IconPack, IconPrefix } from '@fortawesome/free-solid-svg-icons'
-import './SVGPage.scss'
+import sizes from './SVGPage.scss'
 import {
     EA,
     EAnimate,
@@ -13,7 +13,8 @@ import {
     EDefs,
     EFeBlend,
     EFeColorMatrix,
-    EFeComponentTransfer
+    EFeComponentTransfer,
+    EFeComposite,
 } from './examples'
 
 const HomePage: React.FC = () => {
@@ -24,10 +25,12 @@ const HomePage: React.FC = () => {
     const [selectedIcon, setSelectedIcon] = useState<string | null>(null)
     const [listClasses, setListClasses] = useState<string>(defaultListClasses)
     const [isLoading, setLoading] = useState<boolean>(false)
+    const iconSizes: { [key: string]: string } = sizes
 
     useEffect(() => {
         setIcons(getIcons().slice(0, iconsLimit))
         setLoading(false)
+        document.querySelector('.size-btn')?.classList.add('active')
     }, [])
 
     function getIcons(): [string, IconDefinition | IconPrefix | IconPack][] {
@@ -78,34 +81,25 @@ const HomePage: React.FC = () => {
                             Show more icons
                         </button>
                     )}
-                    <div className="card d-inline-block shadow position-fixed bottom-0 end-0 me-4 mb-3">
-                        <div className="card-body text-center">
-                            <p className="card-title h5">Change example icon size:</p>
-                            <div className="btn-group" role="group" aria-label="SVG icon size">
-                                <button
-                                    type="button"
-                                    className="size-btn active btn btn-outline-secondary mb-2"
-                                    onClick={(event) => setExampleIconSize(event, 'size-50')}
-                                >
-                                    50px
-                                </button>
-                                <button
-                                    type="button"
-                                    className="size-btn btn btn-outline-secondary mb-2"
-                                    onClick={(event) => setExampleIconSize(event, 'size-100')}
-                                >
-                                    100px
-                                </button>
-                                <button
-                                    type="button"
-                                    className="size-btn btn btn-outline-secondary mb-2"
-                                    onClick={(event) => setExampleIconSize(event, 'size-200')}
-                                >
-                                    200px
-                                </button>
+                    {selectedIcon && (
+                        <div className="card d-inline-block shadow position-fixed bottom-0 end-0 me-4 mb-3">
+                            <div className="card-body text-center">
+                                <p className="card-title h5">Change example icon size:</p>
+                                <div className="btn-group" role="group" aria-label="SVG icon size">
+                                    {Object.keys(iconSizes).map((size, index) => (
+                                        <button
+                                            key={index}
+                                            type="button"
+                                            className="size-btn btn btn-outline-secondary mb-2"
+                                            onClick={(event) => setExampleIconSize(event, `size-${size}`)}
+                                        >
+                                            {size}px
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                     {isLoading && (
                         <div className="d-flex justify-content-center">
                             <div className="spinner-border" role="status">
@@ -142,6 +136,9 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EFeComponentTransfer selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeComposite selectedIcon={selectedIcon} />
                             </li>
                         </ul>
                     )}

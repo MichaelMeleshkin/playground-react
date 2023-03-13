@@ -7,5 +7,17 @@ import EDefs from './EDefs'
 import EFeBlend from './EFeBlend'
 import EFeColorMatrix from './EFeColorMatrix'
 import EFeComponentTransfer from './EFeComponentTransfer'
+import EFeComposite from './EFeComposite'
 
-export { EA, EAnimate, EAnimateMotion, EAnimateTransform, EClipPath, EDefs, EFeBlend, EFeColorMatrix, EFeComponentTransfer }
+export {
+    EA,
+    EAnimate,
+    EAnimateMotion,
+    EAnimateTransform,
+    EClipPath,
+    EDefs,
+    EFeBlend,
+    EFeColorMatrix,
+    EFeComponentTransfer,
+    EFeComposite
+}
