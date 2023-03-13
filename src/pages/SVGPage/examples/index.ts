@@ -8,6 +8,8 @@ import EFeBlend from './EFeBlend'
 import EFeColorMatrix from './EFeColorMatrix'
 import EFeComponentTransfer from './EFeComponentTransfer'
 import EFeComposite from './EFeComposite'
+import EFeConvolveMatrix from './EFeConvolveMatrix'
+import EFeDiffuseLighting from './EFeDiffuseLighting'
 
 export {
     EA,
@@ -19,5 +21,7 @@ export {
     EFeBlend,
     EFeColorMatrix,
     EFeComponentTransfer,
-    EFeComposite
+    EFeComposite,
+    EFeConvolveMatrix,
+    EFeDiffuseLighting,
 }

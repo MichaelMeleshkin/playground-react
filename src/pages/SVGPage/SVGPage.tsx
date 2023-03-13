@@ -15,6 +15,8 @@ import {
     EFeColorMatrix,
     EFeComponentTransfer,
     EFeComposite,
+    EFeConvolveMatrix,
+    EFeDiffuseLighting,
 } from './examples'
 
 const HomePage: React.FC = () => {
@@ -139,6 +141,12 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EFeComposite selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeConvolveMatrix selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeDiffuseLighting selectedIcon={selectedIcon} />
                             </li>
                         </ul>
                     )}
