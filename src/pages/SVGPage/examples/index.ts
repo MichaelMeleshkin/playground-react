@@ -18,6 +18,9 @@ import EFeMorphology from './EFeMorphology'
 import EFeOffset from './EFeOffset'
 import EFeSpecularLighting from './EFeSpecularLighting'
 import EFeTile from './EFeTile'
+import EForeignObject from './EForeignObject'
+import EG from './EG'
+import EMarker from './EMarker'
 
 export {
     EA,
@@ -40,4 +43,7 @@ export {
     EFeOffset,
     EFeSpecularLighting,
     EFeTile,
+    EForeignObject,
+    EG,
+    EMarker,
 }

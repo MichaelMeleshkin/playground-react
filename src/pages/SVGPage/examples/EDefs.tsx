@@ -7,7 +7,7 @@ type Props = {
 
 const EDefs: React.FC<Props> = ({ selectedIcon }: Props) => {
     return (
-        <SVGTag name="defs">
+        <SVGTag name="defs" subTags={['linearGradient']}>
             <svg viewBox="0 0 100 100">
                 <defs>
                     <use id="defs-icon" href={`#${selectedIcon}`} />

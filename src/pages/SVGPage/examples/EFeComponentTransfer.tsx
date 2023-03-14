@@ -7,7 +7,7 @@ type Props = {
 
 const EFeComponentTransfer: React.FC<Props> = ({ selectedIcon }: Props) => {
     return (
-        <SVGTag name="feComponentTransfer" subTags={['feFuncR', 'feFuncB', 'feFuncG', 'feFuncA']}>
+        <SVGTag name="feComponentTransfer" subTags={['feFuncR', 'feFuncB', 'feFuncG', 'feFuncA', 'linearGradient']}>
             <svg viewBox="0 0 100 100">
                 <defs>
                     <linearGradient id="rainbow">

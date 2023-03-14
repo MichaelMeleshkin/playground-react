@@ -25,6 +25,9 @@ import {
     EFeOffset,
     EFeSpecularLighting,
     EFeTile,
+    EForeignObject,
+    EG,
+    EMarker,
 } from './examples'
 
 const HomePage: React.FC = () => {
@@ -179,6 +182,15 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EFeTile selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EForeignObject selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EG selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EMarker selectedIcon={selectedIcon} />
                             </li>
                         </ul>
                     )}
