@@ -10,6 +10,10 @@ import EFeComponentTransfer from './EFeComponentTransfer'
 import EFeComposite from './EFeComposite'
 import EFeConvolveMatrix from './EFeConvolveMatrix'
 import EFeDiffuseLighting from './EFeDiffuseLighting'
+import EFeDisplacementMap from './EFeDisplacementMap'
+import EFeDropShadow from './EFeDropShadow'
+import EFeGaussianBlur from './EFeGaussianBlur'
+import EFeMerge from './EFeMerge'
 
 export {
     EA,
@@ -24,4 +28,8 @@ export {
     EFeComposite,
     EFeConvolveMatrix,
     EFeDiffuseLighting,
+    EFeDisplacementMap,
+    EFeDropShadow,
+    EFeGaussianBlur,
+    EFeMerge,
 }

@@ -17,6 +17,10 @@ import {
     EFeComposite,
     EFeConvolveMatrix,
     EFeDiffuseLighting,
+    EFeDisplacementMap,
+    EFeDropShadow,
+    EFeGaussianBlur,
+    EFeMerge,
 } from './examples'
 
 const HomePage: React.FC = () => {
@@ -147,6 +151,18 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EFeDiffuseLighting selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeDisplacementMap selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeDropShadow selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeGaussianBlur selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeMerge selectedIcon={selectedIcon} />
                             </li>
                         </ul>
                     )}
