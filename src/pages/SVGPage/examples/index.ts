@@ -14,6 +14,10 @@ import EFeDisplacementMap from './EFeDisplacementMap'
 import EFeDropShadow from './EFeDropShadow'
 import EFeGaussianBlur from './EFeGaussianBlur'
 import EFeMerge from './EFeMerge'
+import EFeMorphology from './EFeMorphology'
+import EFeOffset from './EFeOffset'
+import EFeSpecularLighting from './EFeSpecularLighting'
+import EFeTile from './EFeTile'
 
 export {
     EA,
@@ -32,4 +36,8 @@ export {
     EFeDropShadow,
     EFeGaussianBlur,
     EFeMerge,
+    EFeMorphology,
+    EFeOffset,
+    EFeSpecularLighting,
+    EFeTile,
 }

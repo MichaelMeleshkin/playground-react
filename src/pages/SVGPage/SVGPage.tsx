@@ -21,6 +21,10 @@ import {
     EFeDropShadow,
     EFeGaussianBlur,
     EFeMerge,
+    EFeMorphology,
+    EFeOffset,
+    EFeSpecularLighting,
+    EFeTile,
 } from './examples'
 
 const HomePage: React.FC = () => {
@@ -163,6 +167,18 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EFeMerge selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeMorphology selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeOffset selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeSpecularLighting selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EFeTile selectedIcon={selectedIcon} />
                             </li>
                         </ul>
                     )}

@@ -7,7 +7,7 @@ type Props = {
 
 const EFeDisplacementMap: React.FC<Props> = ({ selectedIcon }: Props) => {
     return (
-        <SVGTag name="feDisplacementMap">
+        <SVGTag name="feDisplacementMap" subTags={['feTurbulence']}>
             <svg viewBox="0 0 100 100">
                 <filter id="feDMFilter1">
                     <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2" result="turbulence" />
