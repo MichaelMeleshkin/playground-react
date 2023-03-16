@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PageLayout from '../../shared/components/PageLayout'
 import FaIconExample from './examples/FaIconExample'
 import * as FaIcons from '@fortawesome/free-solid-svg-icons'
-import { IconDefinition, IconPack, IconPrefix } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleDown, faArrowAltCircleUp, IconDefinition, IconPack, IconPrefix } from '@fortawesome/free-solid-svg-icons'
 import sizes from './SVGPage.scss'
 import {
     EA,
@@ -28,7 +28,14 @@ import {
     EForeignObject,
     EG,
     EMarker,
+    EMask,
+    EPattern,
+    ERadialGradient,
+    ESymbol,
+    ETextPath,
+    EView,
 } from './examples'
+import FaIcon from '../../shared/components/FaIcon'
 
 const HomePage: React.FC = () => {
     const iconsLimit = 100
@@ -43,8 +50,14 @@ const HomePage: React.FC = () => {
     useEffect(() => {
         setIcons(getIcons().slice(0, iconsLimit))
         setLoading(false)
-        document.querySelector('.size-btn')?.classList.add('active')
     }, [])
+
+    useEffect(() => {
+        const firstBtn = document.querySelector('.size-btn')
+        if (firstBtn) {
+            setIconState(firstBtn, 'size-50')
+        }
+    }, [selectedIcon])
 
     function getIcons(): [string, IconDefinition | IconPrefix | IconPack][] {
         return Object.entries(FaIcons)
@@ -61,13 +74,16 @@ const HomePage: React.FC = () => {
         console.log(`You clicked: ${id}`)
     }
 
-    function setExampleIconSize(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, className: string): void {
+    function setIconState(btn: Element, className: string) {
         setListClasses(`${defaultListClasses} ${className}`)
         Array.prototype.forEach.call(document.querySelectorAll('.size-btn') || [], (item: HTMLElement) => {
             item.classList.remove('active')
         })
-        const target = e.target as Element
-        target.classList.add('active')
+        btn.classList.add('active')
+    }
+
+    function setIconSizeByButton(e: React.MouseEvent<HTMLButtonElement | Element, MouseEvent>, className: string): void {
+        setIconState(e.target as Element, className)
     }
 
     return (
@@ -95,20 +111,34 @@ const HomePage: React.FC = () => {
                         </button>
                     )}
                     {selectedIcon && (
-                        <div className="card d-inline-block shadow position-fixed bottom-0 end-0 me-4 mb-3">
-                            <div className="card-body text-center">
-                                <p className="card-title h5">Change example icon size:</p>
-                                <div className="btn-group" role="group" aria-label="SVG icon size">
-                                    {Object.keys(iconSizes).map((size, index) => (
-                                        <button
-                                            key={index}
-                                            type="button"
-                                            className="size-btn btn btn-outline-secondary mb-2"
-                                            onClick={(event) => setExampleIconSize(event, `size-${size}`)}
-                                        >
-                                            {size}px
-                                        </button>
-                                    ))}
+                        <div className="d-flex flex-column position-fixed bottom-0 end-0 me-3 mb-3">
+                            <div className="d-flex align-items-end flex-column">
+                                <button type="button" className="btn btn-outline-secondary mb-2" onClick={() => scrollTo(0, 0)}>
+                                    <FaIcon name={faArrowAltCircleUp}></FaIcon>
+                                </button>
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-secondary mb-2"
+                                    onClick={() => scrollTo(0, document.body.clientHeight)}
+                                >
+                                    <FaIcon name={faArrowAltCircleDown}></FaIcon>
+                                </button>
+                            </div>
+                            <div className="card d-inline-block shadow-sm">
+                                <div className="card-body text-center">
+                                    <p className="card-title h5">Change example icon size:</p>
+                                    <div className="btn-group" role="group" aria-label="SVG icon size">
+                                        {Object.keys(iconSizes).map((size, index) => (
+                                            <button
+                                                key={index}
+                                                type="button"
+                                                className="size-btn btn btn-outline-secondary"
+                                                onClick={(event) => setIconSizeByButton(event, `size-${size}`)}
+                                            >
+                                                {size}px
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -191,6 +221,24 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EMarker selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EMask selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EPattern selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <ERadialGradient selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <ESymbol selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <ETextPath selectedIcon={selectedIcon} />
+                            </li>
+                            <li>
+                                <EView />
                             </li>
                         </ul>
                     )}

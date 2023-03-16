@@ -21,6 +21,12 @@ import EFeTile from './EFeTile'
 import EForeignObject from './EForeignObject'
 import EG from './EG'
 import EMarker from './EMarker'
+import EMask from './EMask'
+import EPattern from './EPattern'
+import ERadialGradient from './ERadialGradient'
+import ESymbol from './ESymbol'
+import ETextPath from './ETextPath'
+import EView from './EView'
 
 export {
     EA,
@@ -46,4 +52,10 @@ export {
     EForeignObject,
     EG,
     EMarker,
+    EMask,
+    EPattern,
+    ERadialGradient,
+    ESymbol,
+    ETextPath,
+    EView,
 }

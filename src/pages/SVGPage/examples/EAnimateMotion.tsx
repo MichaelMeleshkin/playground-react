@@ -1,15 +1,12 @@
 import React from 'react'
 import SVGTag from '../../../shared/components/SVGTag'
+import { getElemAttr } from '../utils'
 
 type Props = {
     selectedIcon: string
 }
 
 const ELink: React.FC<Props> = ({ selectedIcon }: Props) => {
-    function getElemAttr(id: string, attr: string): string | null | undefined {
-        return document.querySelector(`#${id}`)?.getAttribute(attr)
-    }
-
     function viewBoxPadding(viewBox: string): string {
         const [x, y, width, height] = viewBox.split(' ').map((v) => parseInt(v))
         const w = Math.round(width / 10)
@@ -23,7 +20,7 @@ const ELink: React.FC<Props> = ({ selectedIcon }: Props) => {
     }
 
     return (
-        <SVGTag name="animateMotion">
+        <SVGTag name="animateMotion" subTags={['mpath']}>
             <svg viewBox={viewBoxPadding(getElemAttr(selectedIcon, 'viewBox') ?? '')}>
                 <use
                     {...viewBoxToParams(getElemAttr(selectedIcon, 'viewBox') ?? '')}

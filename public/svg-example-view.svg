@@ -1,0 +1,10 @@
+<svg viewBox="0 0 150 50" width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+    <view id="view1" viewBox="0 0 50 50" />
+    <rect x="0" y="0" width="50" height="50" fill="pink" />
+
+    <view id="view2" viewBox="50 0 50 50" />
+    <rect x="50" y="0" width="50" height="50" fill="lightgreen" />
+
+    <view id="view3" viewBox="100 0 50 50" />
+    <rect x="100" y="0" width="50" height="50" fill="lightblue" />
+</svg>
