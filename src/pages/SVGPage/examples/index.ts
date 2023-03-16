@@ -27,6 +27,7 @@ import ERadialGradient from './ERadialGradient'
 import ESymbol from './ESymbol'
 import ETextPath from './ETextPath'
 import EView from './EView'
+import HtmlEffects from './HtmlEffects'
 
 export {
     EA,
@@ -58,4 +59,5 @@ export {
     ESymbol,
     ETextPath,
     EView,
+    HtmlEffects,
 }

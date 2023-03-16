@@ -34,6 +34,7 @@ import {
     ESymbol,
     ETextPath,
     EView,
+    HtmlEffects,
 } from './examples'
 import FaIcon from '../../shared/components/FaIcon'
 
@@ -239,6 +240,9 @@ const HomePage: React.FC = () => {
                             </li>
                             <li>
                                 <EView />
+                            </li>
+                            <li>
+                                <HtmlEffects />
                             </li>
                         </ul>
                     )}
