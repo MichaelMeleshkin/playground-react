@@ -1,4 +1,5 @@
 export const ROUTES = {
     HOME: '/',
-    SVG: '/svg'
+    SVG: '/svg',
+    WEB_COMPONENTS: '/web-components',
 }

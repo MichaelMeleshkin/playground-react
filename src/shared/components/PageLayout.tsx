@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 import PageTitle from './PageTitle'
 import Sidebar from './Sidebar/Sidebar'
+import ErrorBoundary from './ErrorBoundary'
 
 type Props = {
     pageTitle: string
@@ -13,7 +14,9 @@ const PageLayout: React.FC<Props> = ({ pageTitle, children }: Props) => {
             <Sidebar />
             <main className="p-3">
                 <PageTitle text={pageTitle}></PageTitle>
-                <section>{children}</section>
+                <ErrorBoundary>
+                    <section>{children}</section>
+                </ErrorBoundary>
             </main>
         </div>
     )

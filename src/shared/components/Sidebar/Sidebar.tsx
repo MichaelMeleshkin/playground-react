@@ -16,20 +16,28 @@ const NAV_LIST: Navigation[] = [
     {
         route: ROUTES.HOME,
         title: 'Home',
-        icon: FaIcons.home
+        icon: FaIcons.home,
     },
     {
         route: ROUTES.SVG,
         title: 'SVG',
-        icon: FaIcons.image
-    }
+        icon: FaIcons.image,
+    },
+    {
+        route: ROUTES.WEB_COMPONENTS,
+        title: 'Web components',
+        icon: FaIcons.code,
+    },
 ]
 
 const Sidebar: React.FC = () => {
     return (
         <nav className="d-flex flex-nowrap">
             <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ width: '280px' }}>
-                <NavLink to={ROUTES.HOME} className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <NavLink
+                    to={ROUTES.HOME}
+                    className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+                >
                     <svg className="bi pe-none me-2" width="40" height="32" viewBox="0 0 118 94">
                         <title>Bootstrap</title>
                         <path

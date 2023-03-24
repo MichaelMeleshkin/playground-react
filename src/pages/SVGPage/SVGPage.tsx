@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PageLayout from '../../shared/components/PageLayout'
+import { logger } from '../../shared/services'
 import FaIconExample from './examples/FaIconExample'
 import * as FaIcons from '@fortawesome/free-solid-svg-icons'
 import { faArrowAltCircleDown, faArrowAltCircleUp, IconDefinition, IconPack, IconPrefix } from '@fortawesome/free-solid-svg-icons'
@@ -72,7 +73,7 @@ const HomePage: React.FC = () => {
     function selectIcon(e: React.MouseEvent, id: string): void {
         e.preventDefault()
         setSelectedIcon(id)
-        console.log(`You clicked: ${id}`)
+        logger.log(`You clicked: ${id}`)
     }
 
     function setIconState(btn: Element, className: string) {
